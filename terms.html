@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Spartan Corporation Studio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://res.cloudinary.com/dqrp70g9u/image/upload/v1765560274/Music_Player-removebg-preview_t5iv3j.png">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <img src="https://res.cloudinary.com/dqrp70g9u/image/upload/v1765560274/Music_Player-removebg-preview_t5iv3j.png" alt="Spartan Studio Logo" class="logo">
+                <span class="brand-name">Spartan Corporation Studio</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">HOME</a></li>
+                <li><a href="about.html" class="nav-link">ABOUT</a></li>
+                <li><a href="games.html" class="nav-link">GAMES</a></li>
+                <li><a href="developers.html" class="nav-link">DEVELOPERS</a></li>
+            </ul>
+            <div class="nav-actions">
+                <!-- Social Media Links -->
+                <div class="social-links">
+                    <a href="https://tiktok.com/@spartanstudioofc" target="_blank" class="social-link" title="TikTok">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                        </svg>
+                    </a>
+                    <a href="https://instagram.com/spartanstudioofc" target="_blank" class="social-link" title="Instagram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="https://youtube.com/@spartanstudioofc" target="_blank" class="social-link" title="YouTube">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </a>
+                </div>
+                
+                <!-- Profile Button -->
+                <button class="profile-btn" id="profileBtn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                    </svg>
+                </button>
+                
+                <!-- Notification Bell -->
+                <div class="notification-wrapper">
+                    <button class="notification-bell" id="notificationBell">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+                        </svg>
+                        <span class="notification-badge" id="notificationBadge">3</span>
+                    </button>
+                    <div class="notification-dropdown" id="notificationDropdown">
+                        <div class="notification-header">
+                            <h3>Notifications</h3>
+                            <button class="mark-all-read" id="markAllRead">Mark all as read</button>
+                        </div>
+                        <div class="notification-list" id="notificationList">
+                            <!-- Notifications will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="page-header">
+            <div class="container">
+                <h1>Terms of Service</h1>
+                <p>Please read these terms carefully before using our services</p>
+            </div>
+        </div>
+
+        <section class="legal-section">
+            <div class="container">
+                <div class="legal-content">
+                    <div class="legal-meta">
+                        <p><strong>Last Updated:</strong> January 13, 2025</p>
+                        <p><strong>Effective Date:</strong> January 13, 2025</p>
+                    </div>
+
+                    <div class="legal-article">
+                        <h2>1. Acceptance of Terms</h2>
+                        <p>By accessing and using the Spartan Corporation Studio website and services, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.</p>
+                    </div>
+
+                    <div class="legal-article">
+                        <h2>2. Description of Service</h2>
+                        <p>Spartan Corporation Studio provides game development services, specifically creating games for the Roblox platform. Our services include:</p>
+                        <ul>
+                            <li>Game development and publishing on Roblox</li>
+                            <li>Community engagement through our website and social media</li>
+                            <li>Customer support and communication services</li>
+                            <li>Updates and notifications about our games</li>
+                        </ul>
+                    </div>
+
+                    <div class="legal-article">
+                        <h2>3. User Accounts and Registration</h2>
+                        <p>To access certain features of our service, you may be required to provide your Roblox username. You agree to:</p>
+                        <ul>
+                            <li>Provide accurate and complete information</li>
+                            <li>Maintain the security of your account information</li>
+                            <li>Accept responsibility for all activities under your account</li>
+                            <li>Notify us immediately of any unauthorized use</li>
+                        </ul>
+                    </div>
+
+                    <div class="legal-article">
+                        <h2>4. Acceptable Use Policy</h2>
+                        <p>You agree not to use our services to:</p>
+                        <ul>
+                            <li>Violate any applicable laws or regulations</li>
+                            <li>Infringe on intellectual property rights</li>
+                            <li>Transmit harmful, offensive, or inappropriate content</li>
+                            <li>Attempt to gain unauthorized access to our systems</li>
+                            <li>Interfere with the proper functioning of our services</li>
+                            <li>Impersonate others or provide false information</li>
+                        </ul>
+                    </div>
+
+                    <div class="legal-article">
+                        <h2>5. Intellectual Property Rights</h2>
+                        <p>All content, features, and functionality of our website and games are owned by Spartan Corporation Studio and are protected by copyright, trademark, and other intellectual property laws. You may not:</p>
+                        <ul>
+                            <li>Copy, modify, or distribute our content without permission</li>
+                            <li>Use our trademarks or logos without authorization</li>
+                            <li>Reverse engineer or attempt to extract source code</li>
+                            <li>Create derivative works based on our content</li>
+                        </ul>
+                    </div>
+
+                    <div class="legal-article">
+                        <h2>6. Game-Specific Terms</h2>
+                        <p>When playing our Roblox games, you also agree to:</p>
+                        <ul>
+                            <li>Follow Roblox's Terms of Service and Community Guidelines</li>
+                            <li>Respect other players and maintain appropriate behavior</li>
+                            <li>Not exploit bugs or use unauthorized modifications</li>
+                            <li>Not engage in real money trading of in-game items</li>
+                            <li>Report any issues or violations to our support team</li>
+                        </ul>
+                    </div>
+
+                    <div class="legal-article">
+                        <h2>7. Privacy and Data Collection</h2>
+                        <p>Your privacy is important to us. We collect and use information as described in our Privacy Policy. By using our services, you consent to our data practices as outlined in that policy.</p>
+                    </div>
+
+                    <div class="legal-article">
+                        <h2>8. Disclaimers and Limitations</h2>
+                        <p>Our services are provided "as is" without warranties of any kind. We do not guarantee:</p>
+                        <ul>
+                            <li>Uninterrupted or error-free service</li>
+                            <li>Specific game release dates or features</li>
+                            <li>Compatibility with all devices or systems</li>
+                            <li>Preservation of user data or game progress</li>
+                        </ul>
+                        <p>To the maximum extent permitted by law, Spartan Corporation Studio shall not be liable for any indirect, incidental, special, or consequential damages.</p>
+                    </div>
+
+                    <div class="legal-article">
+                        <h2>9. Termination</h2>
+                        <p>We reserve the right to terminate or suspend your access to our services at any time, with or without cause, and with or without notice. Upon termination, your right to use our services will cease immediately.</p>
+                    </div>
+
+                    <div class="legal-article">
+                        <h2>10. Changes to Terms</h2>
+                        <p>We reserve the right to modify these terms at any time. Changes will be effective immediately upon posting on our website. Your continued use of our services after changes constitutes acceptance of the new terms.</p>
+                    </div>
+
+                    <div class="legal-article">
+                        <h2>11. Governing Law</h2>
+                        <p>These terms shall be governed by and construed in accordance with applicable laws. Any disputes arising from these terms or our services shall be resolved through appropriate legal channels.</p>
+                    </div>
+
+                    <div class="legal-article">
+                        <h2>12. Contact Information</h2>
+                        <p>If you have any questions about these Terms of Service, please contact us at:</p>
+                        <ul>
+                            <li>Email: spctacularstudio@gmail.com</li>
+                            <li>Website: Contact form on our website</li>
+                        </ul>
+                    </div>
+
+                    <div class="legal-footer">
+                        <p>By using our services, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="https://res.cloudinary.com/dqrp70g9u/image/upload/v1765560274/Music_Player-removebg-preview_t5iv3j.png" alt="Spartan Studio Logo" class="footer-logo">
+                    <span class="footer-brand-name">Spartan Corporation Studio</span>
+                </div>
+                <div class="footer-links">
+                    <a href="faq.html">FAQ</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                </div>
+                <div class="footer-text">
+                    <p>&copy; 2025 Spartan Corporation Studio. All rights reserved.</p>
+                    <p>Creating amazing Roblox experiences since 2025</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
