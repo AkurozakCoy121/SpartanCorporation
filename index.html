@@ -20,15 +20,17 @@
         }
 
         .container {
-            border: 1px solid #444; /* Garis batas abu-abu gelap */
+            border: 1px solid #444;
             padding: 40px 60px;
-            background-color: #2c2c2c; /* Kontainer sedikit lebih terang dari body */
+            background-color: #2c2c2c;
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            max-width: 600px;
+            width: 90%;
         }
 
         h1 {
-            color: #ffffff; /* Judul Putih */
+            color: #ffffff;
             font-size: 2.5em;
             margin-bottom: 10px;
         }
@@ -36,13 +38,56 @@
         p {
             font-size: 1.1em;
             line-height: 1.6;
-            color: #cccccc; /* Paragraf Putih Keabu-abuan */
+            color: #cccccc;
         }
         
-        .contact {
-            margin-top: 20px;
-            font-size: 0.9em;
-            color: #999999;
+        .stage-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px dashed #444; /* Garis pemisah */
+            text-align: left;
+        }
+        
+        .stage-section h2 {
+            color: #ffffff;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .stages {
+            list-style: none; /* Hilangkan bullet default */
+            padding: 0;
+        }
+        
+        .stages li {
+            background-color: #3a3a3a; /* Latar belakang untuk setiap stage */
+            margin-bottom: 10px;
+            padding: 10px 15px;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1em;
+        }
+        
+        .stages li strong {
+            color: #fff;
+        }
+        
+        .status-complete {
+            color: #76ff03; /* Hijau terang untuk status Complete */
+            font-weight: bold;
+        }
+        
+        .status-inprogress {
+            color: #ffeb3b; /* Kuning untuk status In Progress */
+            font-weight: bold;
+        }
+
+        .status-pending {
+            color: #cccccc; /* Abu-abu untuk status Pending */
+            font-weight: bold;
         }
     </style>
 </head>
@@ -53,11 +98,30 @@
             We apologize for the inconvenience, but our website is currently undergoing scheduled maintenance and improvements.
         </p>
         <p>
-            We are working hard to enhance your experience and will be back online shortly. Please check back again soon!
+            We are working hard to enhance your experience and will be back online shortly. Thank you for your patience!
         </p>
-        <p class="contact">
-            Thank you for your patience.
-        </p>
-    </div>
+        
+        <div class="stage-section">
+            <h2>🛠 Current Progress</h2>
+            <ul class="stages">
+                <li>
+                    <strong>Database Migration</strong> 
+                    <span class="status-complete">Complete</span>
+                </li>
+                <li>
+                    <strong>New Feature Implementation</strong> 
+                    <span class="status-inprogress">In Progress</span>
+                </li>
+                <li>
+                    <strong>Security Audit & Testing</strong> 
+                    <span class="status-pending">Pending</span>
+                </li>
+                <li>
+                    <strong>Final Deployment</strong> 
+                    <span class="status-pending">Pending</span>
+                </li>
+            </ul>
+        </div>
+        </div>
 </body>
 </html>
