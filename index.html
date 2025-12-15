@@ -3,127 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Under Maintenance</title>
+    <title>SERVER STATUS: MAINTENANCE MODE</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #1a1a1a; /* Latar Belakang Gelap */
-            color: #f0f0f0; /* Teks Putih/Terang */
-            text-align: center;
-            padding: 50px;
+            font-family: 'Consolas', 'Courier New', monospace; /* Monospace Font */
+            background-color: #0d1117; /* Very Dark Background */
+            color: #c9d1d9; /* Light Gray Text */
             margin: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            padding: 20px;
             min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
         }
 
-        .container {
-            border: 1px solid #444;
-            padding: 40px 60px;
-            background-color: #2c2c2c;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            max-width: 600px;
-            width: 90%;
+        .terminal-container {
+            width: 100%;
+            max-width: 700px;
+            padding: 20px;
+            margin-top: 50px;
+            line-height: 1.5;
         }
 
-        h1 {
-            color: #ffffff;
-            font-size: 2.5em;
-            margin-bottom: 10px;
+        .header-status {
+            color: #ff7b72; /* Error Red */
+            font-size: 1.5em;
+            margin-bottom: 5px;
+            border-bottom: 1px solid #30363d;
+            padding-bottom: 5px;
         }
 
-        p {
-            font-size: 1.1em;
-            line-height: 1.6;
-            color: #cccccc;
+        .message {
+            color: #c9d1d9;
+            margin-top: 15px;
+            margin-bottom: 25px;
+            font-size: 0.95em;
         }
         
         .stage-section {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px dashed #444; /* Garis pemisah */
+            padding-top: 15px;
+            border-top: 1px dashed #30363d;
             text-align: left;
         }
         
         .stage-section h2 {
-            color: #ffffff;
-            font-size: 1.5em;
-            margin-bottom: 15px;
-            text-align: center;
+            color: #58a6ff; /* Status Blue */
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
         }
         
         .stages {
-            list-style: none; /* Hilangkan bullet default */
+            list-style: none;
             padding: 0;
         }
         
         .stages li {
-            background-color: #3a3a3a; /* Latar belakang untuk setiap stage */
-            margin-bottom: 10px;
-            padding: 10px 15px;
-            border-radius: 4px;
+            margin-bottom: 5px;
+            padding: 2px 0;
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            font-size: 1em;
+            align-items: flex-start;
+            font-size: 0.9em;
         }
         
         .stages li strong {
-            color: #fff;
+            color: #e6e6e6;
+            flex-grow: 1;
         }
-        
+
+        /* STATUS COLORS */
         .status-complete {
-            color: #76ff03; /* Hijau terang untuk status Complete */
+            color: #57ff6c; /* Bright Green */
             font-weight: bold;
         }
         
         .status-inprogress {
-            color: #ffeb3b; /* Kuning untuk status In Progress */
+            color: #ffeb3b; /* Bright Yellow */
             font-weight: bold;
         }
 
         .status-pending {
-            color: #cccccc; /* Abu-abu untuk status Pending */
+            color: #798696; /* Dull Gray */
             font-weight: bold;
+        }
+
+        /* Sub-stages (indented) */
+        .sub-stage {
+            padding-left: 20px;
+            color: #798696;
+            font-style: italic;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Website Under Maintenance</h1>
-        <p>
-            We apologize for the inconvenience, but our website is currently undergoing scheduled maintenance and improvements.
-        </p>
-        <p>
-            We are working hard to enhance your experience and will be back online shortly. Thank you for your patience!
+    <div class="terminal-container">
+        <div class="header-status">
+            [ERROR: 503 SERVICE UNAVAILABLE] Maintenance Mode Active
+        </div>
+
+        <p class="message">
+            We sincerely apologize for the inconvenience. The system is currently undergoing critical updates and essential feature implementations. 
+            We expect to return to full operational status shortly. Thank you for your patience.
         </p>
         
         <div class="stage-section">
-            <h2>🛠 Current Progress</h2>
+            <h2>System Update Progress Status:</h2>
             <ul class="stages">
                 <li>
-                    <strong>Database Migration</strong> 
-                    <span class="status-complete">Complete</span>
+                    <strong>Database Migration (Schema v2.1)</strong> 
+                    <span class="status-complete">[100% DONE]</span>
                 </li>
                 <li>
                     <strong>New Feature Implementation</strong> 
-                    <span class="status-inprogress">2 Feature Complete</span>
+                    <span class="status-inprogress">[IN PROGRESS]</span>
+                </li>
+                <li class="sub-stage">
+                    - Feature 1: Auth Module Refactor 
+                    <span class="status-complete">OK</span>
+                </li>
+                <li class="sub-stage">
+                    - Feature 2: Core Shopping Cart Logic
+                    <span class="status-complete">OK</span>
+                </li>
+                <li class="sub-stage">
+                    - Feature 3: Payment Gateway Integration
+                    <span class="status-inprogress">PENDING (70%)</span>
                 </li>
                 <li>
-                    <strong>Security Audit & Testing</strong> 
-                    <span class="status-pending">Pending</span>
+                    <strong>Security Audit & QA Testing</strong> 
+                    <span class="status-pending">[AWAITING EXECUTION]</span>
                 </li>
                 <li>
-                    <strong>Final Deployment</strong> 
-                    <span class="status-pending">Pending</span>
+                    <strong>Final Deployment Rollout</strong> 
+                    <span class="status-pending">[AWAITING EXECUTION]</span>
                 </li>
             </ul>
         </div>
         </div>
 </body>
 </html>
-
-
