@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assets - Spartan Corporation Studio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="asset-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://res.cloudinary.com/dqrp70g9u/image/upload/v1765560274/Music_Player-removebg-preview_t5iv3j.png">
+    
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <img src="https://res.cloudinary.com/dqrp70g9u/image/upload/v1765560274/Music_Player-removebg-preview_t5iv3j.png" alt="Spartan Studio Logo" class="logo">
+                <span class="brand-name">Spartan Corporation Studio</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">HOME</a></li>
+                <li><a href="about.html" class="nav-link">ABOUT</a></li>
+                <li><a href="games.html" class="nav-link">GAMES</a></li>
+                <li><a href="developers.html" class="nav-link">DEVELOPERS</a></li>
+                <li><a href="community.html" class="nav-link">COMMUNITY</a></li>
+                <li><a href="asset.html" class="nav-link active">ASSET</a></li>
+            </ul>
+            <div class="nav-actions">
+                <!-- Social Media Links -->
+                <div class="social-links">
+                    <a href="https://tiktok.com/@spartanstudioofc" target="_blank" class="social-link" title="TikTok">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                        </svg>
+                    </a>
+                    <a href="https://instagram.com/spartanstudioofc" target="_blank" class="social-link" title="Instagram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="https://youtube.com/@spartanstudioofc" target="_blank" class="social-link" title="YouTube">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </a>
+                </div>
+                
+                <!-- Profile Button -->
+                <button class="profile-btn" id="profileBtn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                    </svg>
+                </button>
+                
+                <!-- Notification Bell -->
+                <div class="notification-wrapper">
+                    <button class="notification-bell" id="notificationBell">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+                        </svg>
+                        <span class="notification-badge" id="notificationBadge">3</span>
+                    </button>
+                    <div class="notification-dropdown" id="notificationDropdown">
+                        <div class="notification-header">
+                            <h3>Notifications</h3>
+                            <button class="mark-all-read" id="markAllRead">Mark all as read</button>
+                        </div>
+                        <div class="notification-list" id="notificationList">
+                            <!-- Notifications will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="asset-container">
+        <div class="asset-content">
+            <div class="asset-header">
+                <h1>Roblox Assets</h1>
+                <p>Discover and share amazing Roblox assets created by our community</p>
+            </div>
+            
+            <div class="asset-actions">
+                <a href="index.html" class="asset-btn home-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                    </svg>
+                    Home
+                </a>
+                <button class="asset-btn" onclick="openUploadModal()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                    </svg>
+                    Upload Asset
+                </button>
+            </div>
+            
+            <div class="asset-filters">
+                <div class="filter-group">
+                    <input type="text" class="filter-input" id="searchAssets" placeholder="Search assets..." onkeyup="filterAssets()">
+                    <select class="filter-select" id="categoryFilter" onchange="filterAssets()">
+                        <option value="">All Categories</option>
+                        <option value="Models">Models</option>
+                        <option value="Scripts">Scripts</option>
+                        <option value="Decals">Decals</option>
+                        <option value="Audio">Audio</option>
+                        <option value="Meshes">Meshes</option>
+                        <option value="Plugins">Plugins</option>
+                        <option value="GUI">GUI</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="assets-grid" id="assetsGrid">
+                <!-- Assets will be populated by JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Upload Asset Modal -->
+    <div class="asset-modal" id="uploadAssetModal">
+        <div class="asset-modal-content">
+            <div class="asset-modal-header">
+                <h2 class="asset-modal-title">Upload New Asset</h2>
+                <button class="asset-modal-close" onclick="closeUploadModal()">&times;</button>
+            </div>
+            
+            <form id="uploadAssetForm">
+                <div class="form-group">
+                    <label class="form-label">Asset Name *</label>
+                    <input type="text" class="form-input" id="assetName" placeholder="Enter asset name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Asset Image URL *</label>
+                    <input type="url" class="form-input" id="assetImageUrl" placeholder="https://example.com/image.jpg" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Roblox Creator Assets Link</label>
+                    <input type="url" class="form-input" id="robloxCreatorLink" placeholder="https://create.roblox.com/dashboard/creations?activeTab=Model">
+                    <small style="color: #cccccc; font-size: 0.8rem;">
+                        Don't know the link? Visit <a href="https://create.roblox.com/dashboard/creations?activeTab=Model" target="_blank" style="color: #667eea;">create.roblox.com/dashboard/creations?activeTab=Model</a>
+                    </small>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Author *</label>
+                    <input type="text" class="form-input" id="assetAuthor" placeholder="Enter author name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Roblox Name *</label>
+                    <input type="text" class="form-input" id="robloxName" placeholder="Enter Roblox username" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Category *</label>
+                    <select class="form-select" id="assetCategory" required>
+                        <option value="">Select Category</option>
+                        <option value="Models">Models</option>
+                        <option value="Scripts">Scripts</option>
+                        <option value="Decals">Decals</option>
+                        <option value="Audio">Audio</option>
+                        <option value="Meshes">Meshes</option>
+                        <option value="Plugins">Plugins</option>
+                        <option value="GUI">GUI</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Description *</label>
+                    <div class="editor-toolbar">
+                        <button type="button" class="editor-btn" onclick="formatText('bold')"><b>B</b></button>
+                        <button type="button" class="editor-btn" onclick="formatText('italic')"><i>I</i></button>
+                        <button type="button" class="editor-btn" onclick="formatText('underline')"><u>U</u></button>
+                        <button type="button" class="editor-btn" onclick="insertLink()">🔗</button>
+                    </div>
+                    <div class="editor-content" id="assetDescription" contenteditable="true" placeholder="Enter asset description..."></div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">External Links (Optional)</label>
+                    <div class="external-links-section" id="externalLinksSection">
+                        <div class="external-link-item">
+                            <input type="text" class="form-input" placeholder="Link Name" name="linkName">
+                            <input type="url" class="form-input" placeholder="https://example.com" name="linkUrl">
+                            <button type="button" class="remove-link-btn" onclick="removeExternalLink(this)">Remove</button>
+                        </div>
+                    </div>
+                    <button type="button" class="add-link-btn" onclick="addExternalLink()">Add Another Link</button>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn-cancel" onclick="closeUploadModal()">Cancel</button>
+                    <button type="submit" class="btn-submit">Upload Asset</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- External Link Warning Modal -->
+    <div class="warning-modal" id="externalLinkWarning">
+        <div class="warning-content">
+            <div class="warning-icon">⚠️</div>
+            <h3 class="warning-title">External Link Warning</h3>
+            <p class="warning-text">
+                You are about to leave Spartan Corporation Studio and visit an external website. 
+                We are not responsible for the content, privacy policies, or practices of external sites. 
+                Please proceed with caution and at your own discretion.
+            </p>
+            <div class="warning-actions">
+                <button class="btn-cancel" onclick="closeWarningModal()">Cancel</button>
+                <button class="btn-warning" onclick="proceedToExternalLink()">Continue</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="https://res.cloudinary.com/dqrp70g9u/image/upload/v1765560274/Music_Player-removebg-preview_t5iv3j.png" alt="Spartan Studio Logo" class="footer-logo">
+                    <span class="footer-brand-name">Spartan Corporation Studio</span>
+                </div>
+                <div class="footer-links">
+                    <a href="faq.html">FAQ</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                </div>
+                <div class="footer-text">
+                    <p>&copy; 2025 Spartan Corporation Studio. All rights reserved.</p>
+                    <p>Creating amazing Roblox experiences since 2025</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="asset.js"></script>
+</body>
+</html>

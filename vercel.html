@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spartan Corporation Studio - Link Redirector</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://res.cloudinary.com/dqrp70g9u/image/upload/v1765560274/Music_Player-removebg-preview_t5iv3j.png">
+    <style>
+        .redirect-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2d2d2d 100%);
+        }
+        
+        .redirect-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+        }
+        
+        .redirect-logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            border-radius: 15px;
+        }
+        
+        .redirect-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+        
+        .redirect-subtitle {
+            color: #cccccc;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+        
+        .redirect-links {
+            display: grid;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .redirect-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: #ffffff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .redirect-link:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .redirect-link-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .redirect-link-icon {
+            width: 24px;
+            height: 24px;
+            color: #ffffff;
+        }
+        
+        .redirect-link-text {
+            text-align: left;
+        }
+        
+        .redirect-link-title {
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+        
+        .redirect-link-desc {
+            font-size: 0.85rem;
+            color: #888888;
+        }
+        
+        .redirect-arrow {
+            color: #888888;
+            transition: transform 0.3s ease;
+        }
+        
+        .redirect-link:hover .redirect-arrow {
+            transform: translateX(5px);
+        }
+        
+        .loading-spinner {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-top: 2px solid #ffffff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .redirect-footer {
+            color: #666666;
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="redirect-container">
+        <div class="redirect-card">
+            <img src="https://res.cloudinary.com/dqrp70g9u/image/upload/v1765560274/Music_Player-removebg-preview_t5iv3j.png" alt="Spartan Studio Logo" class="redirect-logo">
+            
+            <h1 class="redirect-title">Link Redirector</h1>
+            <p class="redirect-subtitle">Choose where you want to go</p>
+            
+            <div class="redirect-links">
+                <!-- Main Website -->
+                <a href="index.html" class="redirect-link" data-redirect="home">
+                    <div class="redirect-link-info">
+                        <svg class="redirect-link-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z"/>
+                        </svg>
+                        <div class="redirect-link-text">
+                            <div class="redirect-link-title">Main Website</div>
+                            <div class="redirect-link-desc">Go to Spartan Corporation Studio homepage</div>
+                        </div>
+                    </div>
+                    <svg class="redirect-arrow" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/>
+                    </svg>
+                </a>
+                
+                <!-- Games -->
+                <a href="games.html" class="redirect-link" data-redirect="games">
+                    <div class="redirect-link-info">
+                        <svg class="redirect-link-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M21.58 16.09l-1.09-7.66A3.996 3.996 0 0016.53 5H7.47C5.48 5 3.79 6.46 3.51 8.43l-1.09 7.66C2.2 17.63 3.39 19 4.94 19h.68c.8 0 1.54-.37 2.01-.99l.74-1.01h4.26l.74 1.01c.47.62 1.21.99 2.01.99h.68c1.55 0 2.74-1.37 2.52-2.91zM7.5 16c-.83 0-1.5-.67-1.5-1.5S6.67 13 7.5 13s1.5.67 1.5 1.5S8.33 16 7.5 16zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+                        </svg>
+                        <div class="redirect-link-text">
+                            <div class="redirect-link-title">Our Games</div>
+                            <div class="redirect-link-desc">Explore our Roblox game collection</div>
+                        </div>
+                    </div>
+                    <svg class="redirect-arrow" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/>
+                    </svg>
+                </a>
+                
+                <!-- About -->
+                <a href="about.html" class="redirect-link" data-redirect="about">
+                    <div class="redirect-link-info">
+                        <svg class="redirect-link-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/>
+                        </svg>
+                        <div class="redirect-link-text">
+                            <div class="redirect-link-title">About Us</div>
+                            <div class="redirect-link-desc">Learn about our studio and mission</div>
+                        </div>
+                    </div>
+                    <svg class="redirect-arrow" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/>
+                    </svg>
+                </a>
+                
+                <!-- Developers -->
+                <a href="developers.html" class="redirect-link" data-redirect="developers">
+                    <div class="redirect-link-info">
+                        <svg class="redirect-link-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M16,4C16.88,4 17.67,4.38 18.18,5H20C21.11,5 22,5.89 22,7V9C22,10.11 21.11,11 20,11H4C2.89,11 2,10.11 2,9V7C2,5.89 2.89,5 4,5H5.82C6.33,4.38 7.12,4 8,4H16M16,6H8A1,1 0 0,0 7,7A1,1 0 0,0 8,8H16A1,1 0 0,0 17,7A1,1 0 0,0 16,6M4,12H20V20C20,21.11 19.11,22 18,22H6C4.89,22 4,21.11 4,20V12M6,14V16H8V14H6M10,14V16H12V14H10M6,17V19H8V17H6M10,17V19H12V17H10Z"/>
+                        </svg>
+                        <div class="redirect-link-text">
+                            <div class="redirect-link-title">Development Team</div>
+                            <div class="redirect-link-desc">Meet our talented developers</div>
+                        </div>
+                    </div>
+                    <svg class="redirect-arrow" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/>
+                    </svg>
+                </a>
+                
+                <!-- Profile -->
+                <a href="profile.html" class="redirect-link" data-redirect="profile">
+                    <div class="redirect-link-info">
+                        <svg class="redirect-link-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        </svg>
+                        <div class="redirect-link-text">
+                            <div class="redirect-link-title">User Profile</div>
+                            <div class="redirect-link-desc">Manage your account and settings</div>
+                        </div>
+                    </div>
+                    <svg class="redirect-arrow" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/>
+                    </svg>
+                </a>
+                
+                <!-- External Links -->
+                <div style="border-top: 1px solid rgba(255,255,255,0.1); margin: 20px 0; padding-top: 20px;">
+                    <h3 style="color: #ffffff; font-size: 1.1rem; margin-bottom: 15px;">External Links</h3>
+                </div>
+                
+                <!-- TikTok -->
+                <a href="https://tiktok.com/@spartanstudioofc" target="_blank" class="redirect-link" data-redirect="tiktok">
+                    <div class="redirect-link-info">
+                        <svg class="redirect-link-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                        </svg>
+                        <div class="redirect-link-text">
+                            <div class="redirect-link-title">TikTok</div>
+                            <div class="redirect-link-desc">@spartanstudioofc</div>
+                        </div>
+                    </div>
+                    <svg class="redirect-arrow" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>
+                    </svg>
+                </a>
+                
+                <!-- Instagram -->
+                <a href="https://instagram.com/spartanstudioofc" target="_blank" class="redirect-link" data-redirect="instagram">
+                    <div class="redirect-link-info">
+                        <svg class="redirect-link-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                        <div class="redirect-link-text">
+                            <div class="redirect-link-title">Instagram</div>
+                            <div class="redirect-link-desc">@spartanstudioofc</div>
+                        </div>
+                    </div>
+                    <svg class="redirect-arrow" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>
+                    </svg>
+                </a>
+                
+                <!-- YouTube -->
+                <a href="https://youtube.com/@spartanstudioofc" target="_blank" class="redirect-link" data-redirect="youtube">
+                    <div class="redirect-link-info">
+                        <svg class="redirect-link-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                        <div class="redirect-link-text">
+                            <div class="redirect-link-title">YouTube</div>
+                            <div class="redirect-link-desc">@spartanstudioofc</div>
+                        </div>
+                    </div>
+                    <svg class="redirect-arrow" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>
+                    </svg>
+                </a>
+                
+                <!-- Community -->
+                <a href="community.html" class="redirect-link" data-redirect="community">
+                    <div class="redirect-link-info">
+                        <svg class="redirect-link-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12,5.5A3.5,3.5 0 0,1 15.5,9A3.5,3.5 0 0,1 12,12.5A3.5,3.5 0 0,1 8.5,9A3.5,3.5 0 0,1 12,5.5M5,8C5.56,8 6.08,8.15 6.53,8.42C6.38,9.85 6.8,11.27 7.66,12.38C7.16,13.34 6.16,14 5,14A3,3 0 0,1 2,11A3,3 0 0,1 5,8M19,8A3,3 0 0,1 22,11A3,3 0 0,1 19,14C17.84,14 16.84,13.34 16.34,12.38C17.2,11.27 17.62,9.85 17.47,8.42C17.92,8.15 18.44,8 19,8M5.5,18.25C5.5,16.18 8.41,14.5 12,14.5C15.59,14.5 18.5,16.18 18.5,18.25V20H5.5V18.25M0,20V18.5C0,17.11 1.89,15.94 4.45,15.6C3.86,16.28 3.5,17.22 3.5,18.25V20H0M24,20H20.5V18.25C20.5,17.22 20.14,16.28 19.55,15.6C22.11,15.94 24,17.11 24,18.5V20Z"/>
+                        </svg>
+                        <div class="redirect-link-text">
+                            <div class="redirect-link-title">Community</div>
+                            <div class="redirect-link-desc">Join and create communities</div>
+                        </div>
+                    </div>
+                    <svg class="redirect-arrow" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/>
+                    </svg>
+                </a>
+            </div>
+            
+            <div class="redirect-footer">
+                <p>&copy; 2025 Spartan Corporation Studio</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add click tracking and loading states
+        document.querySelectorAll('.redirect-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const redirectType = this.getAttribute('data-redirect');
+                const arrow = this.querySelector('.redirect-arrow');
+                
+                // Add loading state for external links
+                if (this.target === '_blank') {
+                    arrow.style.display = 'none';
+                    const spinner = document.createElement('div');
+                    spinner.className = 'loading-spinner';
+                    spinner.style.display = 'block';
+                    this.appendChild(spinner);
+                    
+                    // Remove spinner after a short delay
+                    setTimeout(() => {
+                        spinner.remove();
+                        arrow.style.display = 'block';
+                    }, 1000);
+                }
+                
+                // Track clicks (you can integrate with analytics here)
+                console.log(`Redirect clicked: ${redirectType}`);
+                
+                // Optional: Add custom redirect logic here
+                if (redirectType === 'home') {
+                    // Custom logic for home redirect
+                }
+            });
+        });
+
+        // Auto-redirect functionality (if URL parameters are present)
+        const urlParams = new URLSearchParams(window.location.search);
+        const redirect = urlParams.get('redirect');
+        const communityId = urlParams.get('community');
+        
+        // Handle community redirects
+        if (communityId) {
+            const communityRedirects = JSON.parse(localStorage.getItem('spartanCommunityRedirects') || '{}');
+            const community = communityRedirects[communityId];
+            
+            if (community) {
+                document.querySelector('.redirect-subtitle').textContent = `Redirecting to ${community.title}...`;
+                setTimeout(() => {
+                    window.location.href = `community.html?join=${communityId}`;
+                }, 2000);
+            } else {
+                document.querySelector('.redirect-subtitle').textContent = 'Community not found. Redirecting to communities...';
+                setTimeout(() => {
+                    window.location.href = 'community.html';
+                }, 2000);
+            }
+            return;
+        }
+        
+        if (redirect) {
+            const redirectMap = {
+                'home': 'index.html',
+                'games': 'games.html',
+                'about': 'about.html',
+                'developers': 'developers.html',
+                'profile': 'profile.html',
+                'community': 'community.html',
+                'faq': 'faq.html',
+                'terms': 'terms.html',
+                'privacy': 'privacy.html',
+                'tiktok': 'https://tiktok.com/@spartanstudioofc',
+                'instagram': 'https://instagram.com/spartanstudioofc',
+                'youtube': 'https://youtube.com/@spartanstudioofc'
+            };
+            
+            if (redirectMap[redirect]) {
+                // Show loading message
+                document.querySelector('.redirect-subtitle').textContent = `Redirecting to ${redirect}...`;
+                
+                // Redirect after 2 seconds
+                setTimeout(() => {
+                    if (redirect === 'tiktok' || redirect === 'instagram' || redirect === 'youtube') {
+                        window.open(redirectMap[redirect], '_blank');
+                    } else {
+                        window.location.href = redirectMap[redirect];
+                    }
+                }, 2000);
+            }
+        }
+
+        // Add keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            const links = document.querySelectorAll('.redirect-link');
+            const currentFocus = document.activeElement;
+            const currentIndex = Array.from(links).indexOf(currentFocus);
+            
+            if (e.key === 'ArrowDown' && currentIndex < links.length - 1) {
+                e.preventDefault();
+                links[currentIndex + 1].focus();
+            } else if (e.key === 'ArrowUp' && currentIndex > 0) {
+                e.preventDefault();
+                links[currentIndex - 1].focus();
+            } else if (e.key === 'Enter' && currentFocus.classList.contains('redirect-link')) {
+                currentFocus.click();
+            }
+        });
+    </script>
+</body>
+</html>
